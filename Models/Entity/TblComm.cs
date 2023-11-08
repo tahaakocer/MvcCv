@@ -7,14 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcCv.Models
+namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblCertificates
+    public partial class TblComm
     {
         public int ID { get; set; }
-        public string Description { get; set; }
+        public string Name { get; set; }
+        public string Mail { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     }
 }

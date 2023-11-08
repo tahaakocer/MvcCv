@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcCv.Models
+namespace MvcCv.Models.Entity
 {
     using System;
     using System.Data.Entity;

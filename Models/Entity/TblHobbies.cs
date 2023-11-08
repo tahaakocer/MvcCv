@@ -7,20 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcCv.Models
+namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TblAbout
+    public partial class TblHobbies
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Address { get; set; }
-        public string Num { get; set; }
-        public string Mail { get; set; }
-        public string Description { get; set; }
-        public string Picture { get; set; }
+        public string Description1 { get; set; }
+        public string Description2 { get; set; }
     }
 }
