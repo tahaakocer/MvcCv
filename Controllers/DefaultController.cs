@@ -51,9 +51,17 @@ namespace MvcCv.Controllers
 
             return PartialView(certificates);
         }
-
+        [HttpGet]
         public PartialViewResult Contact()
         {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult Contact(TblComm t)
+        {
+            t.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            db.TblComm.Add(t);
+            db.SaveChanges();
             return PartialView();
         }
 
