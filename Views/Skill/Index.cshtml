@@ -1,0 +1,79 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblSkills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string progressBarColor = "";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2 class="font-weight-bold">Yetenek Listem</h2>
+                    <div class="col-md-12 mt-3">
+                        <a href="/Skill/AddSkill/" class="btn btn-primary">Yetenek Ekle</a>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div>
+                        <table class="table table-border">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width: 10%">#</th>
+                                    <th style="width: 40px" Yetenek</th>
+                                    <th>Derece</th>
+                                    <th style="width: 40px">Oran</th>
+                                    <th style="width: 100px">Sil</th>
+                                    <th style="width: 40px">Düzenle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    if (item.Rate >= 75)
+                                    {
+                                        progressBarColor = "primary";
+                                    }
+                                    else if (item.Rate < 75 && item.Rate >= 50)
+                                    {
+                                        progressBarColor = "warning";
+                                    }
+                                    else if (item.Rate < 50 && item.Rate >= 0)
+                                    {
+                                        progressBarColor = "danger";
+                                    }
+
+                                    <tr>
+                                        <td>@item.ID</td>
+                                        <td>@item.Skill</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-@progressBarColor" role="progressbar"
+                                                     style="width:@item.Rate%" aria-valuenow="@item.Rate" aria-valuemin="0"
+                                                     aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-@progressBarColor">@item.Rate%</span></td>
+                                        <td>
+                                            <a href="/Skill/DeleteSkill/@item.ID" class="btn btn-danger">
+                                                <i class="fa-solid fa-trash"></i>Sil
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/Skill/GetSkill/@item.ID" class="btn btn-outline-primary">Düzenle</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</div>

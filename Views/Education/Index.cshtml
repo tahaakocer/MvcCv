@@ -1,0 +1,51 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblEducations>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center font-weight-bold mb-4">Eğitimler Listesi</h2>  <hr />
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Okul Adı</th>
+                        <th>Seviye</th>
+                        <th>Alan</th>
+                        <th>GNO</th>
+                        <th>Tarih</th>
+                        <th>Sil</th>
+                        <th>Düzenle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ID</td>
+                            <td>@item.Head</td>
+                            <td>@item.Subtitle1</td>
+                            <td>@item.Subtitle2</td>
+                            <td>@item.GNO</td>
+                            <td>@item.Date</td>
+                            <td>
+                                <a href="/Education/DeleteEducation/@item.ID" class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-trash"></i> Sil
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/Education/GetEducation/@item.ID" class="btn btn-success btn-sm">Düzenle</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Education/AddEducation/" class="btn btn-primary">Yeni Eğitim Ekle</a>
+        </div>
+    </div>
+</div>
+

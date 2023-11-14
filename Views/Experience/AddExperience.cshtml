@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center font-weight-bold mb-4">Deneyim Ekle</h2>
+            <form method="post">
+                <div class="form-group">
+                    <label for="title">Başlık</label>
+                    <input type="text" class="form-control" name="Head" id="title" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label for="subtitle">Alt Başlık</label>
+                    <input type="text" class="form-control" name="Subtitle" id="subtitle" placeholder="Alt Başlık">
+                </div>
+                <div class="form-group">
+                    <label for="date">Tarih</label>
+                    <input type="text" class="form-control" name="Date" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="description">Açıklama</label>
+                    <textarea class="form-control" id="description" name="Description" rows="5" placeholder="Açıklama"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

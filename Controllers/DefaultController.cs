@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcCv.Models.Entity;
+using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
