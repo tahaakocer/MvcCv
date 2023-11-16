@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "AddSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center font-weight-bold mb-4">Sosyal Medya Ekle</h2>
+            <form method="post">
+                <div class="form-group">
+                    <label for="Name">Sosyal Medya Adı</label>
+                    <input type="text" class="form-control" name="Name" id="Name" placeholder="e.g. Linkedin">
+                </div>
+                <div class="form-group">
+                    <label for="Link">Link</label>
+                    <input type="text" class="form-control" name="Link" id="Link" placeholder="e.g.: https://www.linkedin.com/in/taha-ko%C3%A7er-079158260/    ">
+                </div>
+                <div class="form-group">
+                    <label for="icon">İkon</label>
+                    <input type="text" class="form-control" name="icon" id="icon" placeholder="e.g.: fab fa-linkedin-in">
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

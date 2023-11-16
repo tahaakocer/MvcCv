@@ -1,0 +1,31 @@
+﻿@model MvcCv.Models.Entity.TblSocialMedia
+@{
+    ViewBag.Title = "GetSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center font-weight-bold mb-4">Sosyal Medya Güncelle</h2>
+            <form method="post">
+                <div class="form-group">
+                    @Html.Label("Sosyal Medya Adı")
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+                </div>
+                <div class="form-group">
+                    @Html.Label("Link")
+                    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("İkon")
+                    @Html.TextBoxFor(x => x.icon, new { @class = "form-control" })
+                </div>
+             
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+

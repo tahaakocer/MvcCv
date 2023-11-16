@@ -18,7 +18,10 @@ namespace MvcCv.Controllers
 
             return View(degerler);
         }
-
+        public PartialViewResult SocialMedia() {
+            var socialmedias = db.TblSocialMedia.ToList();
+            return PartialView(socialmedias);
+        }
         public PartialViewResult Experience()
         {
             var experiences = db.TblExperiences.ToList();

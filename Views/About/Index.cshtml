@@ -1,25 +1,44 @@
-﻿
+﻿@using MvcCv.Models.Entity
+@model List<TblAbout>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Hakkımda Menüsü</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Ad</th>
-        <th>Şehir</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>Taha</td>
-        <td>İstanbul</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Taha</td>
-        <td>İstanbul</td>
-    </tr>
-</table>
+
+<div class="container">
+    <div class="text-center">
+        <h2 class="font-weight-bold"> Hakkımda Düzenleme Sayfası </h2>
+    </div>
+    <form method="post">
+        @foreach (var item in Model)
+        {
+            <label for="Name">İsim: </label>
+            <input type="text" id="Name" name="Name" class="form-control mb-3" value="@item.Name" placeholder="İsim">
+
+            <label for="Surname">Soyisim: </label>
+            <input type="text" id="Surname" name="Surname" class="form-control  mb-3" value="@item.Surname" placeholder="Soyisim">
+            
+            <label for="Num">Telefon Numarası: </label>
+            <input type="text" id="Num" name="Num" class="form-control  mb-3" value="@item.Num" placeholder="Numara">
+            
+            <label for="Mail">Mail : </label>
+            <input type="email" id="Mail" name="Mail" class="form-control  mb-3" value="@item.Mail" placeholder="Mail">
+           
+            <label for="Picture">Fotoğraf: </label>
+            <input type="text" id="Picture" name="Picture" class="form-control  mb-3" value="@item.Picture" placeholder="fotoğrafın linkini koyunuz">
+           
+            <label for="Address">Adres: </label>
+            <textarea rows="5" id="Address" name="Address" class="form-control  mb-3" placeholder="Adres">@item.Address</textarea>
+           
+            <label for="Description">Açıklama: </label>
+            <textarea rows="5" id="Description" name="Description" class="form-control" placeholder="Açıklama">@item.Description</textarea>
+        }
+        <button class="btn btn-success">
+            <i class="fa-solid fa-pen-to-square fa-bounce"></i> Güncelle
+        </button>
+    </form>
+</div>
+
+
 
