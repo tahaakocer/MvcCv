@@ -11,8 +11,7 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TblEducations
     {
         public int ID { get; set; }
