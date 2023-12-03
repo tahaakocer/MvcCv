@@ -12,6 +12,7 @@ namespace MvcCv.Controllers
     {
         // GET: Education
         EducationRepository repo = new EducationRepository();
+
         public ActionResult Index()
         {
             var educations = repo.List();

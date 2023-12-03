@@ -12,6 +12,7 @@ namespace MvcCv.Controllers
     {
         // GET: Skill
        SkillRepository repo = new SkillRepository();
+
         public ActionResult Index()
         {
             var skills = repo.List();

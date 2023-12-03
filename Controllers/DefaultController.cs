@@ -8,10 +8,12 @@ using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         DbCvEntities db = new DbCvEntities();
         // GET: Default
+       
         public ActionResult Index()
         {
             var degerler = db.TblAbout.ToList();

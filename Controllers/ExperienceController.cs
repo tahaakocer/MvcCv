@@ -12,7 +12,6 @@ namespace MvcCv.Controllers
     {
         // GET: Experience
         ExperienceRepository repo = new ExperienceRepository();
-
         public ActionResult Index()
         {
             var experiences = repo.List();

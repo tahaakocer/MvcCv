@@ -11,7 +11,7 @@ namespace MvcCv.Controllers
     public class CertificateController : Controller
     {
         // GET: Certificate
-        CertificateRepository repo = new CertificateRepository();
+       CertificateRepository repo = new CertificateRepository();
         public ActionResult Index()
         {
             var certificates = repo.List();

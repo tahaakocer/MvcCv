@@ -12,7 +12,6 @@ namespace MvcCv.Controllers
     {
         // GET: Hobby
         HobbyRepository repo = new HobbyRepository();
-
         [HttpGet]
         public ActionResult Index()
         {

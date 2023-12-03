@@ -129,15 +129,15 @@
         <div class="shape"></div>
     </div>
 
-    <form action="#" class="signin-form">
+    <form method="post" class="signin-form">
         <div class="form-group">
             <h3>Admin Paneline Giriş Yap</h3>
+                
+            <label for="Nickname">Kullanıcı Adı</label>
+            <input name="Nickname" type="text" placeholder="Email ya da Kullanıcı adı" id="Nickname" required>
 
-            <label for="username">Kullanıcı Adı</label>
-            <input type="text" placeholder="Email ya da Kullanıcı adı" id="username" required>
-
-            <label for="password">Şifre</label>
-            <input type="password" placeholder="Şifre" id="password" />
+            <label for="Password">Şifre</label>
+            <input name="Password" type="Password" placeholder="Şifre" id="Password" />
 
             <button type="submit">Giriş Yap</button>
         </div>
