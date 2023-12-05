@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace MvcCv.Controllers
-{
+{   
     public class AdminController : Controller
     {
         // GET: Admin
