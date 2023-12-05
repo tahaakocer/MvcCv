@@ -1,0 +1,83 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblAdmin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center font-weight-bold mb-4">Administrator Listesi</h2>  <hr />
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nickname</th>
+                        <th>Password</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ID</td>
+                            <td>@item.Nickname</td>
+                            <td>@item.Password</td>
+                            <td>
+                                <a href="/Admin/DeleteAdmin/@item.ID" class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-trash"></i>   Sil
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Admin Ekle
+            </button>
+        </div>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <script>
+        alert('@TempData["ErrorMessage"]');
+            </script>
+        }
+
+
+    </div>
+    <!-- Button trigger modal -->
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" action="/Admin/AddAdmin">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Admin Ekle</h1>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="Nickname">Kullanıcı Adı</label>
+                            <input type="text" class="form-control" name="Nickname" id="Nickname" placeholder="admin">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Kullanıcı Adı</label>
+                            <input type="text" class="form-control" name="Password" id="Password" placeholder="123456">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Çıkış</button>
+                        <button type="submit" class="btn btn-primary">Ekle</button>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
+
