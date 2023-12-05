@@ -22,18 +22,23 @@ namespace MvcCv.Controllers
         public ActionResult Index(TblAdmin t)
         {
             DbCvEntities db = new DbCvEntities();
-            var admin = db.TblAdmin.FirstOrDefault(x=> x.Nickname == t.Nickname && x.Password == t.Password);
-            if(admin != null)
+            var admin = db.TblAdmin.FirstOrDefault(x => x.Nickname == t.Nickname && x.Password == t.Password);
+            if (admin != null)
             {
                 FormsAuthentication.SetAuthCookie(admin.Nickname, false);
                 Session["Nickname"] = admin.Nickname.ToString();
-                return RedirectToAction("Index","Experience");
+                return RedirectToAction("Index", "Experience");
             }
             else
             {
                 ModelState.AddModelError("", "Kullanıcı adı veya şifre hatalı");
                 return View();
             }
+        }
+        public ActionResult LogOut() { 
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return View();
         }
 
     }
