@@ -27,7 +27,7 @@ namespace MvcCv.Controllers
             {
                 FormsAuthentication.SetAuthCookie(admin.Nickname, false);
                 Session["Nickname"] = admin.Nickname.ToString();
-                return RedirectToAction("Index", "Experience");
+                return RedirectToAction("Index", "About");
             }
             else
             {
@@ -38,7 +38,7 @@ namespace MvcCv.Controllers
         public ActionResult LogOut() { 
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return View();
+            return RedirectToAction("Index", "Login");
         }
 
     }
